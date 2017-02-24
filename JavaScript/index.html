@@ -68,6 +68,18 @@ unitNo: "B-19-10",
 owner: "Tang Xiao Mi"
 },
 ];
+var freshAgents = [
+"Tiong Chui Li",
+"Tiong Chui Lin",
+"Tiong Chin Chin",
+"Foo Yoke Kai",
+"Foo Yoke Wai"
+];
+</script>
+<script>
+
+
+
 window.onload=myFunction();
 
 function myFunction(){
@@ -75,6 +87,8 @@ function myFunction(){
   var wrapper=document.getElementById("wrapper");
 
   var ul =document.createElement("ul");
+  ul.id="agenstlist";
+
   document.getElementById("wrapper").appendChild(ul);
 /*
  for(var i=0;i<agents.length;i++){
@@ -104,6 +118,24 @@ function myFunction(){
       ul.appendChild(li);
 
   }*/
+
+  var list=document.getElementById('agenstlist');
+
+
+  while(list.hasChildNodes()){
+
+       list.removeChild(list.childNodes[0]);
+
+  }
+
+  for(var i=0;i<freshAgents.length;i++){
+    var li=document.createElement("li");
+    var freshagent=document.createTextNode(freshAgents[i]);
+    li.appendChild(freshagent);
+    agenstlist.appendChild(li);
+  }
+
+
 
 
 
