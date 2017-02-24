@@ -40,6 +40,12 @@ var agents = [
   "Sam Sung"
 ];
 
+var newAgents = [
+"Sim Su Yi",
+"Teh Seok Leng",
+"Lau Li Ting"
+];
+
 var properties = [
 {
 unitNo: "C-8-1",
@@ -70,23 +76,29 @@ function myFunction(){
 
   var ul =document.createElement("ul");
   document.getElementById("wrapper").appendChild(ul);
-  
-//Q1
-/* for(var i=0;i<agents.length;i++){
+
+ for(var i=0;i<agents.length;i++){
       var li =document.createElement("li");
       var agent=document.createTextNode(agents[i]);
       li.appendChild(agent);
       ul.appendChild(li);
-  }*/
+  }
 
+  for(var i=0;i<newAgents.length;i++){
+      var li =document.createElement("li");
+      var newAgent=document.createTextNode(newAgents[i]);
+      li.appendChild(newAgent);
+      ul.appendChild(li);
+  }
 
-  for(var i=0;i<properties.length;i++){
+//display list of objects
+  /*for(var i=0;i<properties.length;i++){
       var li=document.createElement("li");
       var people=document.createTextNode(properties[i].unitNo + " : "+properties[i].owner);
       li.appendChild(people);
       ul.appendChild(li);
 
-  }
+  }*/
 
 
 }
