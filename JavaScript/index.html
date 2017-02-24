@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<body>
 
-
-<script>
-
-/*var numbers=[75.43,18.76,99.41,18.78,74.53,86.81,23.51,66.17];
+<!--var numbers=[75.43,18.76,99.41,18.78,74.53,86.81,23.51,66.17];
 
   var sum =0;
   var mean =0;
@@ -24,7 +18,7 @@
   }
 */
 
-var list = [
+/*var list = [
     {name: "choo", email: "weee.com", phone: "1634", address:"London"},
     {name: "chen", email: "haha.com", phone: "1611", address:"Mahalo" },
     {name: "wei", email: "food.com", phone: "16144", address:"Oloha" }]
@@ -32,7 +26,70 @@ var list = [
 
 
 
-console.log(list);
+console.log(list);*/
+-->
+<!DOCTYPE html>
+<html>
+<body id="wrapper">
+<script>
+var agents = [
+  "Tham Mun Fatt",
+  "Tan Chin Tiong",
+  "Apple Tiong",
+  "Tiong Na Na",
+  "Sam Sung"
+];
+
+var properties = [
+{
+unitNo: "C-8-1",
+owner: "Foo Yoke Wai"
+},
+{
+unitNo: "C-3A-3A",
+owner: "Chia Kim Hooi"
+},
+{
+unitNo: "B-18-8",
+owner: "Heng Tee See"
+},
+{
+unitNo: "A-10-10",
+owner: "Tang So Ny"
+},
+{
+unitNo: "B-19-10",
+owner: "Tang Xiao Mi"
+},
+];
+window.onload=myFunction();
+
+function myFunction(){
+
+  var wrapper=document.getElementById("wrapper");
+
+  var ul =document.createElement("ul");
+  document.getElementById("wrapper").appendChild(ul);
+  
+//Q1
+/* for(var i=0;i<agents.length;i++){
+      var li =document.createElement("li");
+      var agent=document.createTextNode(agents[i]);
+      li.appendChild(agent);
+      ul.appendChild(li);
+  }*/
+
+
+  for(var i=0;i<properties.length;i++){
+      var li=document.createElement("li");
+      var people=document.createTextNode(properties[i].unitNo + " : "+properties[i].owner);
+      li.appendChild(people);
+      ul.appendChild(li);
+
+  }
+
+
+}
 
 
 </script>
