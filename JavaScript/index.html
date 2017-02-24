@@ -76,19 +76,24 @@ function myFunction(){
 
   var ul =document.createElement("ul");
   document.getElementById("wrapper").appendChild(ul);
-
+/*
  for(var i=0;i<agents.length;i++){
       var li =document.createElement("li");
       var agent=document.createTextNode(agents[i]);
       li.appendChild(agent);
       ul.appendChild(li);
-  }
+  }*/
 
   for(var i=0;i<newAgents.length;i++){
-      var li =document.createElement("li");
-      var newAgent=document.createTextNode(newAgents[i]);
-      li.appendChild(newAgent);
-      ul.appendChild(li);
+        agents.unshift(newAgents[i]);
+  }
+
+  for(var i=0;i<agents.length;i++){
+    var li =document.createElement("li");
+    var agent=document.createTextNode(agents[i]);
+    li.appendChild(agent);
+    ul.appendChild(li);
+
   }
 
 //display list of objects
@@ -99,6 +104,7 @@ function myFunction(){
       ul.appendChild(li);
 
   }*/
+
 
 
 }
