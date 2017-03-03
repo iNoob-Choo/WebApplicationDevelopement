@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+	</head>
+	<body>
+    <div id="wrapper"></div>
+<script>
+    var parking = [
+
+  {
+    vehicleNo: "WYR9941",
+    driver: "Tham Mun Fatt",
+    block: "E",
+    floor: "2",
+    bay: 11
+  },
+  {
+    vehicleNo: "PKC7453",
+    driver: "Chia Kim Hooi",
+    block: "C",
+    floor: "3A",
+    bay: 15
+  },
+  {
+    vehicleNo: "WC852E",
+    driver: "Ho Jo Ee",
+    block: "E",
+    floor: "G",
+    bay: 34
+  },
+  {
+    vehicleNo: "AGP8681",
+    driver: "Foo Yoke Wai",
+    block: "C",
+    floor: "3A",
+    bay: 19
+
+  },
+  {
+    vehicleNo: "WA1368Y",
+    driver: "Wong Pei Lin",
+    block: "A",
+    floor: "1",
+    bay: 1
+  },
+];
+    window.onload = function(){
+    var wrapper=document.getElementById('wrapper');
+    var table=document.createElement("table");
+    wrapper.appendChild(table);
+
+    var caption=table.createCaption();
+    caption.appendChild(document.createTextNode("Parking Bay Allocation at Pusat Dagangan Burung Tiong"));
+
+    var headings=["Vehicle No.","Driver","Block","Floor","Bay No."];
+    var thead=table.createTHead();
+    var theadRow=thead.insertRow(-1);
+    for(var i=0;i<headings.length;i++){
+      var theadCell=theadRow.insertCell(-1);
+      theadCell.appendChild(document.createTextNode(headings[i]));
+    }
+
+
+    var tbody=table.createTBody();
+    for(var i=0;i<parking.length;i++){
+      var tbodyRow=tbody.insertRow(-1);
+
+      for(var j in parking[i]){
+        var tbodyCell=tbodyRow.insertCell(-1);
+        tbodyCell.appendChild(document.createTextNode(parking[i][j]));
+
+      }
+
+
+    }
+
+
+
+
+  };
+		</script>
+
+	</body>
+</html>
