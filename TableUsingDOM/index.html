@@ -6,54 +6,52 @@
 	<body>
     <div id="wrapper"></div>
 <script>
-    var parking = [
-
-  {
-    vehicleNo: "WYR9941",
-    driver: "Tham Mun Fatt",
-    block: "E",
-    floor: "2",
-    bay: 11
-  },
-  {
-    vehicleNo: "PKC7453",
-    driver: "Chia Kim Hooi",
-    block: "C",
-    floor: "3A",
-    bay: 15
-  },
-  {
-    vehicleNo: "WC852E",
-    driver: "Ho Jo Ee",
-    block: "E",
-    floor: "G",
-    bay: 34
-  },
-  {
-    vehicleNo: "AGP8681",
-    driver: "Foo Yoke Wai",
-    block: "C",
-    floor: "3A",
-    bay: 19
-
-  },
-  {
-    vehicleNo: "WA1368Y",
-    driver: "Wong Pei Lin",
-    block: "A",
-    floor: "1",
-    bay: 1
-  },
+var contacts = [
+{
+  name: "Chia Kim Hooi",
+  phone: "+60124044404",
+  email: "chiakh@duck.com",
+  facebook: "xyz.chiakh"
+},
+{
+  name: "Chan Xiao Hui",
+  phone: "+60125785678",
+  email: "chanxh@pingguo.com",
+  facebook: "pqr.chanxh"
+},
+{
+  name: "Tan Chin Tiong",
+  phone: "+60193163616",
+  email: "tanct@burungtiong.com",
+  facebook: "abc.tanct"
+},
+{
+  name: "Foo Yoke Wai",
+  phone: "+60125575552",
+  email: "fooyw@chicken.com",
+  facebook: "ijk.fooyw"
+},
+{
+  name: "Ho Xin Yi",
+  phone: "+60195889776",
+  email: "hoxy@myna.com",
+  facebook: "mno.hoxy"
+}
 ];
+
+</script>
+
+<script>
+
     window.onload = function(){
     var wrapper=document.getElementById('wrapper');
     var table=document.createElement("table");
     wrapper.appendChild(table);
 
     var caption=table.createCaption();
-    caption.appendChild(document.createTextNode("Parking Bay Allocation at Pusat Dagangan Burung Tiong"));
+    caption.appendChild(document.createTextNode("Contact Table"));
 
-    var headings=["Vehicle No.","Driver","Block","Floor","Bay No."];
+    var headings=["No.","Name","Phone","Email","Facebook"];
     var thead=table.createTHead();
     var theadRow=thead.insertRow(-1);
     for(var i=0;i<headings.length;i++){
@@ -61,14 +59,30 @@
       theadCell.appendChild(document.createTextNode(headings[i]));
     }
 
-
     var tbody=table.createTBody();
-    for(var i=0;i<parking.length;i++){
+    for(var i=0;i<contacts.length;i++){
       var tbodyRow=tbody.insertRow(-1);
+      var tbodyCell=tbodyRow.insertCell(-1);
+      tbodyCell.appendChild(document.createTextNode(i+1));
 
-      for(var j in parking[i]){
-        var tbodyCell=tbodyRow.insertCell(-1);
-        tbodyCell.appendChild(document.createTextNode(parking[i][j]));
+      for(var j in contacts[i]){
+       tbodyCell=tbodyRow.insertCell(-1);
+          if(j=="email"){
+           var cellChild=document.createElement("a");
+           cellChild.appendChild(document.createTextNode(contacts[i][j]));
+           cellChild.setAttribute("href","mailto:" + contacts[i][j]);
+           tbodyCell.appendChild(cellChild);
+
+         }
+        else if(j=="facebook"){
+          var cellChild=document.createElement("a");
+          cellChild.appendChild(document.createTextNode(contacts[i][j]));
+          cellChild.setAttribute("href","https://www.facebook.com/" + contacts[i][j]);
+          tbodyCell.appendChild(cellChild);
+        }
+
+        else  tbodyCell.appendChild(document.createTextNode(contacts[i][j]));
+
 
       }
 
