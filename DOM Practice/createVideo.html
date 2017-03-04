@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<body>
+
+<div id="wrapper"></div>
+
+<video controls id="myVideo" autoplay>
+  Your browser does not support the video tag.
+</video><br>
+<button onclick="playVideo()">Click To Start</button>
+
+<script>
+
+function playVideo(){
+
+  var videoKitten = document.createElement("SOURCE");
+  videoKitten.setAttribute("src", "media/kitten.mp4");
+  document.getElementById("myVideo").appendChild(videoKitten);
+  document.getElementById("wrapper").innerHTML = "The video should be playing fine now";
+
+}
+
+</script>
+
+</body>
+</html>

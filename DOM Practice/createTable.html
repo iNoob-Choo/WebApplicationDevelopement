@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  table {
+    width: 650px;
+    border: solid 3px;
+  }
+  td {
+    border: solid 1px;
+  }
+  thead td, tfoot td {
+    font-weight: bold;
+  }
+  </style>
+<script>
+//objects to be put into the table
+//array of objects [   {}{}{}    ]
+//data for the table
+var students = [
+	{
+		id: '1501',
+		name: 'Rufina Huong',
+		programme: 'SE',
+	},
+	{
+		id: '1502',
+		name: 'Sheh Chun Ming',
+		programme: 'SE',
+	},
+	{
+		id: '1503',
+		name: 'Lim Ru Sin',
+		programme: 'SE',
+	},
+	{
+		id: '1504',
+		name: 'Ng Zhi Wei',
+		programme: 'SE',
+	},
+	{
+		id: '1505',
+		name: 'Frango Liew',
+		programme: 'SE',
+	},
+	{
+		id: '1506',
+		name: 'See Hong Min',
+		programme: 'SE',
+	},
+	{
+		id: '1507',
+		name: 'Joshua Lim',
+		programme: 'SE',
+	},
+	{
+		id: '1508',
+		name: 'Ah Boon',
+		programme: 'SE',
+	},
+	{
+		id: '1509',
+		name: 'Choo Chen Wei',
+		programme: 'SE',
+	},
+	{
+		id: '1510',
+		name: 'Choy Yi Zhen',
+		programme: 'SE',
+	},
+];
+//headings for the table
+var headings=["No.","ID","Name","Programme"];
+
+</script>
+</head>
+<body>
+  <div id="wrapper"></div>
+  <script>
+    var wrapper=document.getElementById('wrapper');
+    var table=document.createElement("table");
+
+    //append talbe into the wrapper
+    wrapper.appendChild(table);
+    //craete a caption thn append text to it
+    var caption=table.createCaption();
+    caption.appendChild(document.createTextNode("SE Students"));
+
+    //after create table n caption, need a thead
+    var thead=table.createTHead();
+    //-1 indicates insert at the last row
+    var theadRow=thead.insertRow(-1);
+    //time to insert thead data (headings)
+    for(var i=0;i<headings.length;i++){
+      //insert a cell block
+      var theadCell=theadRow.insertCell(-1);
+      //inserting data into it
+      theadCell.appendChild(document.createTextNode(headings[i]));
+    }
+
+    //create a tbody
+    var tbody=table.createTBody();
+
+
+    //inserting students data into the table
+    for(var i=0;i<students.length;i++){
+          //inserting a row for tbody
+          var tbodyRow=tbody.insertRow(-1);
+          //inserting a cell or so called column
+          var tbodyCell=tbodyRow.insertCell(-1);
+          //counter + 1 for No.
+           tbodyCell.appendChild(document.createTextNode(i+1));
+
+          for(var j in students[i]){
+            //inserting a column
+             tbodyCell=tbodyRow.insertCell(-1);
+             //looping the data students
+             tbodyCell.appendChild(document.createTextNode(students[i][j]));
+          }
+
+  }
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+
+
+</html>

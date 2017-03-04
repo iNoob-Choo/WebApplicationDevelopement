@@ -1,0 +1,65 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body >
+  <div id="wrapper"></div>
+  <div id="orderedlistwrapper"></div>
+<script>
+
+var students=[
+  "Choo Chen Wei",
+  "Sheh Chun Ming",
+  "Boi Poh Leng",
+  "Frango Liew",
+  "Rufina Huong",
+  "Ah Boon",
+  "Joshua Lim",
+];
+</script>
+<script>
+
+var wrapper=document.getElementById("wrapper");
+//this is unordered list
+var studentlist=document.createElement("ul");
+
+var headline=document.createTextNode("Unordered List");
+wrapper.appendChild(headline);
+
+for(var i=0;i<students.length;i++){
+  //a list has an element called li
+  var li=document.createElement("li");
+  var studentname=document.createTextNode(students[i]);
+  li.appendChild(studentname);
+  studentlist.appendChild(li);
+
+}
+
+wrapper.appendChild(studentlist);
+
+</script>
+<script>
+
+var wrapper=document.getElementById("orderedlistwrapper");
+//this is unordered list
+var orderedstudentlist=document.createElement("ol");
+
+var headlineforordered=document.createTextNode("Ordered List");
+wrapper.appendChild(headlineforordered);
+
+for(var i=0;i<students.length;i++){
+  //a list has an element called li
+  var li=document.createElement("li");
+  var studentname=document.createTextNode(students[i]);
+  li.appendChild(studentname);
+  orderedstudentlist.appendChild(li);
+
+}
+
+wrapper.appendChild(orderedstudentlist);
+
+
+</script>
+
+</body>
+</html>

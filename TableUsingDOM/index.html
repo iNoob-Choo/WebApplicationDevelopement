@@ -78,6 +78,7 @@ var contacts = [
           var cellChild=document.createElement("a");
           cellChild.appendChild(document.createTextNode(contacts[i][j]));
           cellChild.setAttribute("href","https://www.facebook.com/" + contacts[i][j]);
+					cellChild.setAttribute("target","_blank");
           tbodyCell.appendChild(cellChild);
         }
 

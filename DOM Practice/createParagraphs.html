@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Standard html format
+<html>
+<head>
+</head>
+<body>
+  <script>
+  </script>
+</body>
+<html>
+-->
+<html>
+<head>
+</head>
+<body>
+  <div id="wrapper"> </div>
+  <script>
+
+    //Assign the id created to a variable
+    var wrapper=document.getElementById('wrapper');
+    //p represent paragraphs
+    var paragraph=document.createElement("p");
+    //textnode use to make text
+    var textToPutInParagraph=document.createTextNode("This is created using DOM");
+    //Always appendCild after creating
+    paragraph.appendChild(textToPutInParagraph);
+    wrapper.appendChild(paragraph);
+
+  </script>
+</body>
+<html>

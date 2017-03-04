@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="wrapper"></div>
+
+<audio controls id="myAudio" autoplay>
+Your browser does not support the audio tag.
+</audio><br>
+
+<button onclick="playAudio()">Click To Start</button>
+<script>
+
+function playAudio(){
+
+    var audioTweet = document.createElement("SOURCE");
+    audioTweet.setAttribute("src", "media/tweet.mp3");
+    document.getElementById("myAudio").appendChild(audioTweet);
+    document.getElementById("wrapper").innerHTML = "The audio player now works as it should. Press play to listen to the sound of a tweet.";
+}
+
+</script>
+</body>
+</html>
