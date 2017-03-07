@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click "Try it" to execute the date function!</p>
+<button id="myBtn">Click Me!</button>
+<p id="demo"><p>
+<p>Attaching an event to this button</p>
+<button id="btnEvent">Event Attached</button>
+<p id="showingdate"></p>
+
+
+<p>Attaching an event listener to this button</p>
+<button id="btnListener">Click</button>
+<button id="btnMany">Many Function</button>
+
+<script>
+
+//small o for onclick!
+document.getElementById("myBtn").onclick=displayDate;
+document.getElementById('btnEvent').addEventListener("click",show);
+//can add multiple functions to it
+document.getElementById('btnListener').addEventListener("click",function(){
+  alert("This is the function");
+
+})
+var manyEventButton=document.getElementById('btnMany');
+manyEventButton.addEventListener("click",function(){
+  alert("1st function");
+})
+manyEventButton.addEventListener("click",function(){
+  alert("This function is also called");
+})
+
+function displayDate(){
+  document.getElementById('demo').innerHTML=Date();
+}
+function show(){
+  document.getElementById('showingdate').innerHTML=Date();
+}
+
+
+</script
+
+</body>
+</html>
