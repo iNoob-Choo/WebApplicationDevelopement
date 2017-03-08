@@ -5,6 +5,7 @@
 <body >
   <div id="wrapper"></div>
   <div id="orderedlistwrapper"></div>
+  <div id="descriptionlist"></div>
 <script>
 
 var students=[
@@ -57,6 +58,28 @@ for(var i=0;i<students.length;i++){
 }
 
 wrapper.appendChild(orderedstudentlist);
+</script>
+<script>
+//description list
+var wrapper=document.getElementById('descriptionlist');
+var header=document.createTextNode("Description List");
+wrapper.appendChild(header);
+
+var dl=document.createElement("dl");
+
+for(var i=0;i<students.length;i++){
+  var dt=document.createElement("dt");
+  var dd=document.createElement("dd");
+  var studentname=document.createTextNode(students[i]);
+  var description=document.createTextNode("This is SE student")
+  dt.appendChild(studentname);
+  dd.appendChild(description);
+  dl.appendChild(dt);
+  dl.appendChild(dd);
+
+}
+
+wrapper.appendChild(dl);
 
 
 </script>
