@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+<body>
+
+<p id="para"></p>
+<div id="wrapper"></p>
+<p id="w3school"></p>
+
+<script>
+
+var p=document.getElementById('para');
+var wrapper=document.getElementById('wrapper');
+var w3school=document.getElementById('w3school');
+p.appendChild(document.createTextNode("Added iframe element, click on link to display in iframe"));
+
+var iframe=document.createElement("iframe");
+iframe.setAttribute("height","300px");
+iframe.setAttribute("width","100%");
+iframe.setAttribute("name","iframe_a");
+wrapper.appendChild(iframe);
+
+var a=document.createElement("a");
+a.appendChild(document.createTextNode("w3schools link"));
+a.setAttribute("href","https://www.w3schools.com");
+a.setAttribute("target","iframe_a");
+w3school.appendChild(a);
+
+</script>
+
+
+
+</body>
+</html>
