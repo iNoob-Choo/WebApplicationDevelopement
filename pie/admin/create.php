@@ -28,11 +28,6 @@ if($_POST){
 	echo "No Data";
 }
 
-$sql=<<<SQL
-INSERT INTO announcement(subject,message,type,posted) VALUES('$subject','$message','$type','$posted')
-SQL;
-	 
-
 if($stmt->execute()===TRUE){
 	echo "Recoreded". "<br>";
 }else{
