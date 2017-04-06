@@ -1,0 +1,5 @@
+php and database: SQL Procedural
+
+http://www.tutorialrepublic.com/php-tutorial/php-mysql-insert-query.php
+
+https://www.codeofaninja.com/2011/12/php-and-mysql-crud-tutorial.html
